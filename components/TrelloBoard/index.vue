@@ -47,12 +47,11 @@ function createdColumn() {
   nextTick(() => {
     (document.querySelector(".column:last-of-type .title-input") as HTMLInputElement).focus()
   })
-
 }
 </script>
 
-<template>                  
-  <div class="flex items-start overflow-x-auto gap-4">
+<template>   
+  <div class="flex items-start overflow-x-auto m-8 gap-4">
     <draggable 
       v-model="columns" 
       group="columns"
@@ -64,14 +63,14 @@ function createdColumn() {
       <template #item="{element: column}: {element: Column }">
         <div class="column bg-gray-200 p-5 rounded min-w-[250px]">
           <header class="font-bold mb-4">
-            <DragHandle />
+            <SharedDragHandle />
             <input 
               type="text"
               class="title-input bg-transparent focus:bg-white rounded px-1 w-4/5"
               @keyup.enter="($event.target as HTMLInputElement).blur()"
               @keydown.backspace="column.title === '' ? columns = columns.filter((c) => c.id !== column.id) : null"
               v-model="column.title"
-             />
+            />
           </header>
           <draggable 
             v-model="column.tasks" 
@@ -82,7 +81,7 @@ function createdColumn() {
           >
             <template #item="{element: task}: {element: Task}">
               <div>
-                <TrelloBoardTask 
+                <TrelloBoardShowTask 
                   :task="task" 
                   @delete="
                     column.tasks = column.tasks.filter((task) => task.id !== $event)
@@ -92,7 +91,7 @@ function createdColumn() {
             </template>
           </draggable>
           <footer>
-            <NewTask @add="column.tasks.push($event)"/>
+            <TrelloBoardNewTask @add="column.tasks.push($event)"/>
           </footer>
         </div>
       </template>

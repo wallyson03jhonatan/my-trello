@@ -24,12 +24,12 @@ onKeyStroke('Backspace', (e) => {
     @blur="focused = false"
     tabindex="0"
   >
-    <DragHandle class="pr-2"/>
+    <SharedDragHandle class="pr-2"/>
     <span>{{ task.title }}</span>
   </div>
 </template>
 
-<style>
+<style scoped>
 .sortable-drag .task {
   transform: rotate(5deg);
 }
