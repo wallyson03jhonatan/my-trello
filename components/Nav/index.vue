@@ -7,6 +7,7 @@ const projects = [
   'My Notes',
   'My Schedule',
 ]
+
 </script>
 
 <template>
