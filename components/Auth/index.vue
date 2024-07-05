@@ -33,19 +33,24 @@ function getColorRGB(color: string) {
 </script>
 
 <template>
-  <div class="relative flex max-w-4xl my-20 mx-auto shadow-effect fix-height">
-      <NuxtImg :src="image" class="h-full w-full" />
-      <div class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 glass-effect">
-        <slot />
-      </div>
+  <NuxtImg :src="image" class="h-screen w-screen" />
+  <div class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 content__size glass-effect shadow-effect rounded-sm">
+    <NuxtImg :src="image" class="h-full w-1/2 invisible md:visible" />
+    <div class="w-full md:w-1/2 absolute right-0 top-1/2 transform -translate-y-1/2 z-10">
+      <slot></slot>
+    </div>
   </div>
 </template>
-
 
 <style scoped>
 .glass-effect {
   background-color: v-bind(bgColorRGBA);
   backdrop-filter: blur(2px);
   -webkit-backdrop-filter: blur(2px);
+}
+
+.content__size {
+  height: calc(100vh - 20%);
+  width: calc(100vw - 20%);
 }
 </style>

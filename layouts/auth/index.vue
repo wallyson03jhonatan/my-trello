@@ -3,6 +3,8 @@ const routeName = computed(() => {
   return useRoute().name;
 })
 
+console.log(routeName);
+
 </script>
 
 <template>
