@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { Grid2x2Check } from 'lucide-vue-next'
 
 const projects = [
   'My life',
@@ -12,8 +13,14 @@ const projects = [
 
 <template>
   <div>
-    <h1 class="text-xl text-zinc-300 font-bold">My Trello</h1>
-    <h3 class="text-base text-zinc-500 font-medium">My Life App</h3>
+
+    <div class="flex items-start gap-2">
+      <Grid2x2Check :size="48" color="#065f46" stroke-width="1" />
+      <div class="flex flex-col">
+        <h1 class="text-xl text-zinc-300 font-bold">My Trello</h1>
+        <h3 class="text-sm text-zinc-500 font-medium">My Life App</h3>
+      </div>
+    </div>
 
     <div class="mt-8">
       <div class="flex items-center justify-between">
@@ -28,5 +35,10 @@ const projects = [
         </div>
       </div>
     </div>
+
+    <div>Project Members</div>
+
+    <div>Logout</div>
+    
   </div>
 </template>

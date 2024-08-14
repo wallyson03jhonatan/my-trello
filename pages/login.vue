@@ -1,9 +1,7 @@
-<script setup lang="ts">
-definePageMeta({
-  layout: 'auth'
-});
-</script>
+<script setup lang="ts"></script>
 
 <template>
-  <div>Login route</div>
+  <Auth>
+    <AuthLogin /> 
+  </Auth>
 </template>

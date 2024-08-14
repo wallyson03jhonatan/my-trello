@@ -11,9 +11,9 @@ import { Squircle } from 'lucide-vue-next';
       <button>Relatórios</button>
     </div>
 
-    <div class="flex flex-row gap-8">
+    <div class="flex flex-row items-center gap-2">
       <span>Naruto Uzumaki</span>
-      <Squircle />
+      <Squircle :size="48" color="#065f46" stroke-width="1" />
     </div>
   </div>
 </template>
