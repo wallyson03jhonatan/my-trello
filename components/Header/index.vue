@@ -9,6 +9,7 @@ import { Squircle } from 'lucide-vue-next';
     <div class="flex flex-row gap-8">
       <button>Cards</button>
       <button>Relatórios</button>
+      <SharedPlusButton bg-color="bg-red-500" />
     </div>
 
     <div class="flex flex-row items-center gap-2">

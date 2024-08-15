@@ -34,7 +34,7 @@ function getColorRGB(color: string) {
 
 <template>
   <NuxtImg :src="image" class="h-screen w-screen" />
-  <div class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 content__size glass-effect shadow-effect rounded-sm">
+  <div class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 content__size glass__effect shadow__effect rounded-sm">
     <NuxtImg :src="image" class="h-full w-1/2 invisible md:visible" />
     <div class="w-full md:w-1/2 absolute right-0 top-1/2 transform -translate-y-1/2 z-10">
       <slot></slot>
@@ -43,10 +43,14 @@ function getColorRGB(color: string) {
 </template>
 
 <style scoped>
-.glass-effect {
+.glass__effect {
   background-color: v-bind(bgColorRGBA);
   backdrop-filter: blur(2px);
   -webkit-backdrop-filter: blur(2px);
+}
+
+.shadow__effect {
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
 .content__size {
