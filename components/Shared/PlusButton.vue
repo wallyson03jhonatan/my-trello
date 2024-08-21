@@ -1,21 +1,19 @@
 <script setup lang="ts">
 import { Plus } from 'lucide-vue-next';
 
-const props = defineProps<{
+defineProps<{
   size?: number
   rounded?: string
   bgColor?: string
   iconColor?: string
+  borderStyle?: string
   positionStyle?: string
 }>();
-
-console.log(props);
-
 
 </script>
 
 <template>
-  <div class="p-2" :class="bgColor ?? 'bg-transparent' ">
-    <Plus color="#000" :size="32" stroke-width="1" />
+  <div class="p-1 cursor-pointer" :class="[bgColor ?? 'bg-transparent', positionStyle, rounded, borderStyle ]">
+    <Plus :color="iconColor" :size="size" stroke-width="1" />
   </div>
 </template>

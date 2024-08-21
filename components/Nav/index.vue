@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Grid2x2Check } from 'lucide-vue-next'
+import { CircleUserRound, Grid2x2Check, LogOut } from 'lucide-vue-next'
 
 const projects = [
   'My life',
@@ -9,10 +9,18 @@ const projects = [
   'My Schedule',
 ]
 
+const teamMembers = [
+  'Naruto',
+  'Sai',
+  'Sasuke',
+  'Sakura',
+  'Yamato',
+  'Kakashi',
+]
 </script>
 
 <template>
-  <div>
+  <div class="relative">
 
     <div class="flex items-start gap-2">
       <Grid2x2Check :size="48" color="#065f46" stroke-width="1" />
@@ -25,20 +33,36 @@ const projects = [
     <div class="mt-8">
       <div class="flex items-center justify-between">
         <span class="text-zinc-300 font-semibold">Projetos ({{ projects.length }})</span>
-        <button>Add</button>
+        <SharedPlusButton :size="18" icon-color="#d4d4d8" rounded="rounded-md" border-style="border border-zinc-500" />
       </div>
       
       <div class="mt-4 pl-2">
-        <div v-for="project, index in projects" :key="index" class="flex justify-between items-center py-2">
+        <div v-for="project, index in projects" :key="index" class="py-2">
           <span class="text-sm text-zinc-300 font-medium">{{ project }}</span>
-          <span>Sino</span>
         </div>
       </div>
     </div>
 
-    <div>Project Members</div>
+    <div class="mt-8">
+      <div class="flex items-center justify-between">
+        <span class="text-zinc-300 font-semibold">Membros do time ({{ teamMembers.length }})</span>
+        <SharedPlusButton :size="18" icon-color="#d4d4d8" rounded="rounded-md" border-style="border border-zinc-500" />
+      </div>
 
-    <div>Logout</div>
+      <div class="mt-4 pl-2">
+        <div v-for="member, index in teamMembers" :key="index" class="flex items-center gap-2 py-2">
+          <CircleUserRound :color="colorPicker()" />
+          <span class="text-sm text-zinc-300 font-medium">{{ member }}</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="absolute bottom-8 w-full">
+      <NuxtLink class="flex gap-1 items-center" to="/login" target="_self">
+        <LogOut :size="24" class="rotate-180" color="#ef4444"/>
+        <span class="text-zinc-300 text-lg">Logout</span>
+      </NuxtLink>
+    </div>
     
   </div>
 </template>
