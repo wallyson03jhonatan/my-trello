@@ -37,8 +37,8 @@ const teamMembers = [
       </div>
       
       <div class="mt-4">
-        <div v-for="project, index in projects" :key="index" class="py-2 pl-2 cursor-pointer hover:bg-gray-500 hover:rounded-sm hover:transition-colors">
-          <span class="text-sm text-zinc-300 font-medium">{{ project }}</span>
+        <div v-for="project, index in projects" :key="index" class="py-2 pl-2 cursor-pointer text-zinc-300 hover:bg-gray-500 hover:text-black hover:transition-colors hover:rounded-sm">
+          <span class="text-sm font-medium">{{ project }}</span>
         </div>
       </div>
     </div>
@@ -50,10 +50,10 @@ const teamMembers = [
       </div>
 
       <div class="mt-4">
-        <div v-for="member, index in teamMembers" :key="index" class="cursor-pointer hover:bg-gray-500 hover:rounded-sm hover:transition-colors">
+        <div v-for="member, index in teamMembers" :key="index" class="cursor-pointer text-zinc-300 hover:bg-gray-500 hover:text-black hover:transition-colors hover:rounded-sm">
           <div class="flex items-center gap-2 py-2 pl-2">
             <CircleUserRound :color="colorPicker()" />
-            <span class="text-sm text-zinc-300 font-medium">{{ member }}</span>
+            <span class="text-sm  font-medium">{{ member }}</span>
           </div>
         </div>
       </div>
