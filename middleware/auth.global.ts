@@ -1,4 +1,4 @@
-const userLoggedIn: boolean = true;
+let userLoggedIn: boolean = true;
 
 export default defineNuxtRouteMiddleware((to, from) => {
   if (to.path !== '/login' && !userLoggedIn) {
@@ -9,6 +9,11 @@ export default defineNuxtRouteMiddleware((to, from) => {
     return navigateTo('/');
   }
 
+  if (to.path === '/logout' && userLoggedIn) {
+    userLoggedIn = false;
+    return navigateTo('/login');
+  }
+  
   return; 
 });
 
