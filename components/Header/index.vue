@@ -7,8 +7,8 @@ import { CircleUserRound } from 'lucide-vue-next'
   <div class="flex flex-row justify-between items-center my-5 mx-8 gap-8">
     
     <div class="flex flex-row gap-8">
-      <button>Cards</button>
-      <button>Relatórios</button>
+      <NuxtLink to="/">Cards</NuxtLink>
+      <NuxtLink to="/reports">Relatórios</NuxtLink>
     </div>
 
     <div class="flex flex-row items-center gap-2">
