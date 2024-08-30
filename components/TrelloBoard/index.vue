@@ -8,9 +8,18 @@ const columns = useLocalStorage<Column[]>("trelloBoard", [
     id: nanoid(),
     title: 'Backlog',
     tasks: [
-      { id: nanoid(), title: 'Create marketing land page', createdAt: new Date() },
-      { id: nanoid(), title: 'Develop cool new feature', createdAt: new Date() },
-      { id: nanoid(), title: 'Fix page nav bug', createdAt: new Date() },
+      { id: nanoid(), title: 'Add projects modal', createdAt: new Date() },
+      { id: nanoid(), title: 'Add Members modal', createdAt: new Date() },
+      { id: nanoid(), title: 'Join trello with projetos', createdAt: new Date() },
+      { id: nanoid(), title: 'Filter cards by title or date', createdAt: new Date() },
+      { id: nanoid(), title: 'Make subscribe screen', createdAt: new Date() },
+      { id: nanoid(), title: 'Make forgot password screen', createdAt: new Date() },
+      { id: nanoid(), title: 'Make flow of select project -> members -> cards', createdAt: new Date() },
+      { id: nanoid(), title: 'Make flow of users auth', createdAt: new Date() },
+      { id: nanoid(), title: 'Adjust trello cards overflow e transition', createdAt: new Date() },
+      { id: nanoid(), title: 'Adjust profile icons with sameColors cards overflow e transition', createdAt: new Date() },
+      { id: nanoid(), title: 'Create mobile layout with in development message', createdAt: new Date() },      
+      { id: nanoid(), title: 'Create reports dashboard', createdAt: new Date() },      
     ],
   },
   { id: nanoid(), title: 'Selected for Dev', tasks: [] },
@@ -51,7 +60,7 @@ function createdColumn() {
 </script>
 
 <template>   
-  <div class="flex items-start overflow-x-auto m-8 gap-4">
+  <div class="flex items-start overflow-hidden m-8 gap-4">
     <draggable 
       v-model="columns" 
       group="columns"
@@ -77,7 +86,7 @@ function createdColumn() {
             :group="{name: 'tasks', pull: alt ? 'clone' : true}"
             handle=".drag-handle"
             item-key="id"
-            :animation="150"
+            :animation="300"
           >
             <template #item="{element: task}: {element: Task}">
               <div>
@@ -104,3 +113,5 @@ function createdColumn() {
     </button>
   </div>
 </template>
+
+<style scoped></style>

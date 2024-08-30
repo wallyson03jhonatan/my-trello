@@ -11,10 +11,12 @@
   },
   "dependencies": {
     "@nuxt/image": "^1.7.0",
+    "@pinia/nuxt": "^0.5.4",
     "@vueuse/nuxt": "^10.9.0",
     "lucide-vue-next": "^0.395.0",
     "nanoid": "^5.0.6",
     "nuxt": "^3.11.1",
+    "pinia": "^2.2.2",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0",
     "vuedraggable": "^4.1.0"
